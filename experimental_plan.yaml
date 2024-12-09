@@ -39,8 +39,8 @@ asset_source:
     - train_pipeline:
       - step: train
         source: 
-          code: local
-          branch:
+          code: https://github.com/mellerikat-aicontents/dlinear-train.git
+          branch: master
           requirements:
             - requirements.txt
       
@@ -48,16 +48,11 @@ asset_source:
     - inference_pipeline:
       - step: inference 
         source: 
-          code: local
-          branch:
+          code: https://github.com/mellerikat-aicontents/dlinear-inference.git
+          branch: master
           requirements: 
 
-      # - step: output 
-      #   source: 
-      #     code: local
-      #     # code: http://mod.lge.com/hub/dxadvtech/assets/alo-guide-output.git
-      #     branch: release_1.0
-      #     requirements: []
+
 
 control:
     - get_asset_source: once ## once, every
