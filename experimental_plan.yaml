@@ -1,0 +1,71 @@
+name: DLinear
+external_path:
+    - load_train_data_path: ./solution/sample_data/train/
+    - load_inference_data_path: ./solution/sample_data/test/
+    - save_train_artifacts_path:
+    - save_inference_artifacts_path:
+    - load_model_path: 
+
+version: 1.0.0
+
+external_path_permission:
+    - aws_key_profile:
+ 
+user_parameters:
+    - train_pipeline:
+      - step: train 
+        args:
+          # 학습에 대한 정보를 여기다! (args)
+          - seq_len: 96
+            pred_len: 48
+            scaler_type : 'standard'
+            features: 'MS'
+            individual: True
+            enc_in: 7
+            batch_size: 32
+            train_epoch: 10
+      
+    - inference_pipeline:
+      - step: inference
+        args:
+          - seq_len: 96
+            pred_len: 48
+            features: 'MS'
+            individual: True
+            enc_in: 7
+            batch_size: 32
+        
+asset_source:
+    - train_pipeline:
+      - step: train
+        source: 
+          code: local
+          branch:
+          requirements:
+            - requirements.txt
+      
+
+    - inference_pipeline:
+      - step: inference 
+        source: 
+          code: local
+          branch:
+          requirements: 
+
+      # - step: output 
+      #   source: 
+      #     code: local
+      #     # code: http://mod.lge.com/hub/dxadvtech/assets/alo-guide-output.git
+      #     branch: release_1.0
+      #     requirements: []
+
+control:
+    - get_asset_source: once ## once, every
+    - backup_artifacts: True
+    - backup_log: True
+    - backup_size: 1000
+    - interface_mode: memory
+    - save_inference_format: tar.gz 
+    - check_resource: False 
+  
+ui_args_detail:
