@@ -2,7 +2,7 @@
 
 ## What is Time Series Forecasting?
 
-Time Series Forecasting(시계열 예측)은 시간 순서대로 배열된 데이터를 분석하고 미래의 값을 예측하는 데 중점을 둔 AI 칸텐츠입니다. 과거 시점의 패턴과 추세를 학습하여, 주어진 데이터로부터 미래의 데이터 포인트의 집합을 예측하는 데 사용합니다. 과거에는 ARIMA, VAR 등 통계 기법으로 미래를 예측했습니다. 현재 딥러닝 기반 방법론이 각광받으면서 LSTM, Transformer 등 다양한 모델들이 시계열 예측에 활용되고 있으며, 본 solution은 비교적 경량화되어 있는 모델이지만 시계열 예측 성능이 좋은 Dlinear 알고리즘 코드입니다.
+Time Series Forecasting(시계열 예측)은 시간 순서대로 배열된 데이터를 분석하고 미래의 값을 예측하는 데 중점을 둔 AI 콘텐츠입니다. 과거 시점의 패턴과 추세를 학습하여, 주어진 데이터로부터 미래의 데이터 포인트의 집합을 예측하는 데 사용합니다. 과거에는 ARIMA, VAR 등 통계 기법으로 미래를 예측했습니다. 현재 딥러닝 기반 방법론이 각광받으면서 LSTM, Transformer 등 다양한 모델들이 시계열 예측에 활용되고 있으며, 본 solution은 비교적 경량화되어 있는 모델이지만 시계열 예측 성능이 좋은 Dlinear 알고리즘 코드입니다.
 
 ## When to use Time Series Forecasting?
 
